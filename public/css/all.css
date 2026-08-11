@@ -496,7 +496,7 @@ body.is-loader {
 }
 .banner-block .subheading {
 	width: 430rem;
-	margin: 0 30rem 7rem -161rem;
+	margin: 0 30rem 7rem 0;
 	text-align: left;
 }
 .banner-block .button {
@@ -1173,7 +1173,7 @@ body.is-loader {
 @media screen and (max-width: 1399px) {
 	.banner-block .subheading {
 		width: 320px;
-		margin: 0 30rem 7rem -161rem;
+		margin: 0 30rem 7rem 0;
 		text-align: left;
 	}
 }
