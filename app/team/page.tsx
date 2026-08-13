@@ -46,7 +46,7 @@ export default function Team() {
             </div>
             <div className="box-col">
               <div className="box-img img-float">
-                <img src="/images/about2-1.jpeg" alt="" />
+                <img src="/images/Randy-portreit.jpg" alt="" />
               </div>
               <div className="box-text mob-hidden">
                 His philosophy is simple: understand what the client needs,

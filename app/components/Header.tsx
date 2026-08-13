@@ -11,7 +11,7 @@ const LEFT_MENU = [
 ];
 
 const RIGHT_MENU = [
-  { href: "/team", label: "Team" },
+
   { href: "/contact", label: "Contact" },
 ];
 

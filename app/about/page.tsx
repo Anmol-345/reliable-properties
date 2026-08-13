@@ -61,7 +61,7 @@ export default function About() {
             <div className="about-team-col reveal">
               <h2>
                 <div className="text-wrap">
-                  <div className="text-inner">About {business.ownerName}</div>
+                  <div className="text-inner">About </div>
                 </div>
               </h2>
               <div className="subheading">

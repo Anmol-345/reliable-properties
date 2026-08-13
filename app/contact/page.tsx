@@ -20,14 +20,36 @@ export default function Contact() {
               </div>
             </h1>
           </div>
-          <div className="contacts-info">
-            mobile: {business.phonePrimary} / {business.phoneSecondary}
-            <br />
-            {business.email}
-            <br />
-            {business.address}
+          <div className="contacts-layout">
+            <div className="contacts-left">
+              <div className="contacts-info">
+                mobile: {business.phonePrimary} / {business.phoneSecondary}
+                <br />
+                {business.email}
+                <br />
+                {business.address}
+              </div>
+              <JoinForm withKey={false} />
+            </div>
+            <div className="contacts-right" style={{ position: 'relative' }}>
+              <div className="map-loader"></div>
+              <iframe
+                src="https://maps.google.com/maps?q=28.9077072,77.1209106&hl=en&z=17&output=embed"
+                width="100%"
+                height="100%"
+                style={{ 
+                  border: '2px solid var(--c2)', 
+                  minHeight: '350px', 
+                  borderRadius: '8px',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
-          <JoinForm />
         </div>
       </div>
     </section>

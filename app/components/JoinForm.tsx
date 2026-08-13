@@ -8,17 +8,48 @@ export default function JoinForm({
   withKey?: boolean;
 }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("text-100"),
+      email: formData.get("email-251"),
+      phone: formData.get("tel-591"),
+      message: formData.get("text-101"),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError('Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
     return (
       <div className="thanks">
         <h2>Thanks for Joining!</h2>
-        <div className="subheading">Check your email to verify your application.</div>
+        <div className="subheading">Your inquiry has been sent to our WhatsApp.</div>
         <a href="/" className="button">
           Back to Home Page
         </a>
@@ -41,6 +72,7 @@ export default function JoinForm({
           noValidate
           data-status="init"
         >
+          {error && <div style={{ color: 'red', marginBottom: '1rem' }}>{error}</div>}
           <div className="input-box">
             <span className="wpcf7-form-control-wrap input-item">
               <span className="wpcf7-form-control-wrap" data-name="text-100">
@@ -53,6 +85,7 @@ export default function JoinForm({
                   type="text"
                   name="text-100"
                   required
+                  disabled={loading}
                 />
               </span>
             </span>
@@ -68,6 +101,7 @@ export default function JoinForm({
                   type="email"
                   name="email-251"
                   required
+                  disabled={loading}
                 />
               </span>
             </span>
@@ -81,6 +115,7 @@ export default function JoinForm({
                   placeholder="phone"
                   type="tel"
                   name="tel-591"
+                  disabled={loading}
                 />
               </span>
             </span>
@@ -94,13 +129,14 @@ export default function JoinForm({
                   placeholder="message"
                   type="text"
                   name="text-101"
+                  disabled={loading}
                 />
               </span>
             </span>
           </div>
           <div className="form-button">
-            <button className="button" type="submit">
-              Send Inquiry
+            <button className="button" type="submit" disabled={loading}>
+              {loading ? 'Sending...' : 'Send Inquiry'}
             </button>
           </div>
           <div className="wpcf7-response-output" aria-hidden="true"></div>
