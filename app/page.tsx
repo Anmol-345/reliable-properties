@@ -18,14 +18,14 @@ export default function Home() {
               <h2>
                 <div className="text-wrap">
                   <div className="text-inner">
-                    About <br />
-                    {business.companyName}
+                    About<br />
                   </div>
                 </div>
               </h2>
               <div className="subheading">
                 <div className="text-wrap">
                   <div className="text-inner">
+                    <span>{business.ownerName}</span><br />
                     {business.servicesLine} in Kundli, Haryana
                   </div>
                 </div>
