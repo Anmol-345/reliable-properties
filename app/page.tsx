@@ -25,7 +25,7 @@ export default function Home() {
               <div className="subheading">
                 <div className="text-wrap">
                   <div className="text-inner">
-                    <span>{business.ownerName}</span><br />
+                    <span>{business.companyName}</span><br />
                     {business.servicesLine} in Kundli, Haryana
                   </div>
                 </div>
