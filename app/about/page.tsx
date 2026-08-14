@@ -3,7 +3,9 @@ import JoinForm from "../components/JoinForm";
 import { business } from "../lib/business";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: `About Us - ${business.companyName}`,
+  description: `Learn about ${business.companyName} and our founder ${business.ownerName}. We are trusted property dealers providing the best deals in plots, flats, and commercial properties.`,
+  keywords: ["About Reliable Properties", "Property Dealers Kundli", "Rajesh Kumar Broker", "Real Estate Consultants"],
 };
 
 export default function About() {

@@ -3,7 +3,9 @@ import JoinForm from "../components/JoinForm";
 import { business } from "../lib/business";
 
 export const metadata: Metadata = {
-  title: "Team",
+  title: `Our Team - ${business.companyName}`,
+  description: `Meet the team behind ${business.companyName}, led by our founder ${business.ownerName}. We are dedicated real estate professionals in Kundli.`,
+  keywords: ["Real Estate Agents", "Property Consultants Team", "Reliable Properties Staff", "Rajesh Kumar"],
 };
 
 export default function Team() {

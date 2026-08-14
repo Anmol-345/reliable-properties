@@ -3,7 +3,9 @@ import JoinForm from "../components/JoinForm";
 import { business } from "../lib/business";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: `Contact Us - ${business.companyName}`,
+  description: `Get in touch with ${business.companyName} to buy, sell, or rent properties in Kundli and Delhi NCR. Call us at ${business.phonePrimary} or visit our office.`,
+  keywords: ["Contact Reliable Properties", "Real Estate Office Kundli", "Property Dealers Phone Number", "Enquire Property"],
 };
 
 export default function Contact() {

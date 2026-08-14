@@ -93,5 +93,92 @@
 
 @keyframes rotation {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+
+.sticky-cta .btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
+    border-radius: 5px;
+    background: #cba153;
+}
+
+.sticky-cta .btn.whatsapp {
+    background: #25D366;
+}
+
+/* Property Grid and Badges */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.property-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.property-badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.badge {
+    background: #cba153;
+    color: #000;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.property-info {
+    padding: 20px;
+}
+
+/* Accordion */
+.accordion {
+    margin-top: 30px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+.accordion-item {
+    border-bottom: 1px solid #333;
+}
+.accordion-title {
+    padding: 15px;
+    cursor: pointer;
+    background: #1a1a1a;
+    font-weight: bold;
+}
+.accordion-content {
+    padding: 15px;
+    background: #111;
 }

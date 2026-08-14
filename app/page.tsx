@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import BannerSlider from "./components/BannerSlider";
 import JoinForm from "./components/JoinForm";
 import { business } from "./lib/business";
+
+export const metadata: Metadata = {
+  title: "Reliable Properties - Real Estate Broker in Kundli, Haryana",
+  description: `Find the best plots, flats, floors and commercial properties in Kundli and Delhi NCR with ${business.companyName}. Trusted real estate brokerage led by ${business.ownerName}.`,
+  keywords: ["Plots in Kundli", "Flats in Sonipat", "Real Estate Broker Kundli", "Buy Flats", "Commercial Property Kundli"],
+};
 
 export default function Home() {
   return (

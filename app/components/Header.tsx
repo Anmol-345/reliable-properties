@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { business } from "../lib/business";
+import Image from "next/image";
 
 const LEFT_MENU = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/listings", label: "Listings" },
 ];
 
 const RIGHT_MENU = [
@@ -30,9 +32,11 @@ export default function Header() {
           </a>
           <div className="header-logo">
             <Link href="/">
-              <img
+              <Image
                 src="/images/RELIABLE-PROPERTIES-LOGO-WHITE.svg"
                 alt={business.companyName}
+                width={150}
+                height={50}
               />
             </Link>
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { business } from "../lib/business";
 
 const FOOTER_MENU = [
@@ -15,9 +16,11 @@ export default function Footer() {
       <div className="holder">
         <div className="footer-top">
           <div className="footer-logo">
-            <img
+            <Image
               src="/images/RELIABLE-PROPERTIES-LOGO-WHITE.svg"
               alt={business.companyName}
+              width={150}
+              height={50}
             />
           </div>
           <ul className="footer-nav">

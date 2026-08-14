@@ -3,7 +3,9 @@ import JoinForm from "../components/JoinForm";
 import { business } from "../lib/business";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: `Services - ${business.companyName}`,
+  description: `Explore services offered by ${business.companyName}. We specialize in buying, selling, and renting plots, flats, and commercial spaces across Kundli and Delhi NCR.`,
+  keywords: ["Real Estate Services", "Buy Property Kundli", "Sell Property", "Rent Flats", "Commercial Spaces", "Real Estate Investment"],
 };
 
 export default function Services() {
