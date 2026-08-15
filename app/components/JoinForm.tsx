@@ -37,32 +37,18 @@ export default function JoinForm({
     setError('');
 
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("text-100"),
-      email: formData.get("email-251"),
-      phone: formData.get("tel-591"),
-      message: formData.get("text-101"),
-    };
+    const name = formData.get("text-100")?.toString() || "";
+    const email = formData.get("email-251")?.toString() || "";
+    const phone = formData.get("tel-591")?.toString() || "";
+    const msg = formData.get("text-101")?.toString() || "";
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+    const whatsappMessage = `*New Inquiry*\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${msg}`;
+    const targetPhone = "919813199892";
+    const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        setError('Failed to send message. Please try again.');
-      }
-    } catch (_err) {
-      setError('An error occurred. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
+    window.open(whatsappUrl, '_blank');
+    setSubmitted(true);
+    setLoading(false);
   };
 
   if (submitted) {
@@ -101,11 +87,12 @@ export default function JoinForm({
                   maxLength={400}
                   className="wpcf7-form-control wpcf7-text"
                   aria-invalid="false"
-                  placeholder="full name"
+                  placeholder="FULL NAME"
                   type="text"
                   name="text-100"
                   required
                   disabled={loading}
+                  style={{ fontFamily: 'system-ui, -apple-system, sans-serif', textTransform: 'none' }}
                 />
               </span>
             </span>
@@ -117,11 +104,12 @@ export default function JoinForm({
                   className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
                   aria-required="true"
                   aria-invalid="false"
-                  placeholder="email"
+                  placeholder="EMAIL"
                   type="email"
                   name="email-251"
                   required
                   disabled={loading}
+                  style={{ fontFamily: 'system-ui, -apple-system, sans-serif', textTransform: 'none' }}
                 />
               </span>
             </span>
@@ -132,10 +120,11 @@ export default function JoinForm({
                   maxLength={400}
                   className="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel"
                   aria-invalid="false"
-                  placeholder="phone"
+                  placeholder="PHONE"
                   type="tel"
                   name="tel-591"
                   disabled={loading}
+                  style={{ fontFamily: 'system-ui, -apple-system, sans-serif', textTransform: 'none' }}
                 />
               </span>
             </span>
@@ -145,7 +134,7 @@ export default function JoinForm({
                   ref={textareaRef}
                   className="wpcf7-form-control wpcf7-textarea"
                   aria-invalid="false"
-                  placeholder="message"
+                  placeholder="MESSAGE"
                   name="text-101"
                   disabled={loading}
                   rows={1}
@@ -154,7 +143,7 @@ export default function JoinForm({
                     setMessage(e.target.value);
                     adjustTextareaHeight();
                   }}
-                  style={{ width: '100%', padding: '15px 0', background: 'transparent', border: 'none', borderBottom: '1px solid rgba(255, 255, 255, 0.2)', color: '#fff', fontFamily: 'inherit', fontSize: '16px', resize: 'none', overflow: 'hidden', boxSizing: 'border-box' }}
+                  style={{ width: '100%', padding: '0 0 11px', background: 'transparent', border: 'none', borderBottom: '0.5px solid var(--c1)', color: 'var(--c1)', fontFamily: 'system-ui, -apple-system, sans-serif', textTransform: 'none', fontSize: '16px', resize: 'none', overflow: 'hidden', boxSizing: 'border-box' }}
                 />
               </span>
             </span>
