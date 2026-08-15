@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   },
   description: `${business.companyName}, led by ${business.ownerName}, is a trusted real estate brokerage in Kundli, Haryana offering ${business.servicesLine}.`,
   keywords: ["Reliable Properties", "Plots in Kundli", "Flats in Sonipat", "Real Estate Broker", "Property Dealers", "Commercial Properties", "Buy Flat Kundli"],
+  openGraph: {
+    images: ['/images/key.svg'],
+  },
 };
 
 export default function RootLayout({

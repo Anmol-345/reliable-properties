@@ -62,9 +62,9 @@ export default function Footer() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://dd.nyc/?utm_source=tref.digitaldesignnyc.co&utm_medium=referral&utm_campaign=tref-footer-link"
+              href="https://ava-org.vercel.app"
             >
-              DD.NYC®
+              AVA
             </a>
           </div>
         </div>
