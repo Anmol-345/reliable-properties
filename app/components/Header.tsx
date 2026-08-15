@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { business } from "../lib/business";
 import Image from "next/image";
 
@@ -19,6 +20,7 @@ const RIGHT_MENU = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -27,9 +29,14 @@ export default function Header() {
     <header className="header">
       <div className="holder">
         <div className="header-block">
-          <a href="#" className="mob-nav-icon" aria-label="Open menu">
+          <button 
+            className={`mob-nav-icon ${isMobileNavOpen ? "active" : ""}`} 
+            aria-label={isMobileNavOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+          >
             <span className="mob-nav-block"></span>
-          </a>
+          </button>
           <div className="header-logo">
             <Link href="/">
               <Image
@@ -40,14 +47,14 @@ export default function Header() {
               />
             </Link>
           </div>
-          <div className="header-nav">
+          <div className={`header-nav ${isMobileNavOpen ? "vis" : ""}`}>
             <ul className="header-nav-list">
               {LEFT_MENU.map((item) => (
                 <li
                   key={item.href}
                   className={isActive(item.href) ? "menu-item current-menu-item" : "menu-item"}
                 >
-                  <Link href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
+                  <Link href={item.href} aria-current={isActive(item.href) ? "page" : undefined} onClick={() => setIsMobileNavOpen(false)}>
                     {item.label}
                   </Link>
                 </li>
@@ -59,7 +66,7 @@ export default function Header() {
                   key={item.href}
                   className={isActive(item.href) ? "menu-item current-menu-item" : "menu-item"}
                 >
-                  <Link href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
+                  <Link href={item.href} aria-current={isActive(item.href) ? "page" : undefined} onClick={() => setIsMobileNavOpen(false)}>
                     {item.label}
                   </Link>
                 </li>
