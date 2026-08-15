@@ -324,9 +324,6 @@ body.is-loader {
 .header-phone {
 	margin-left: 36rem;
 }
-.mob-phone-navbar {
-    display: none;
-}
 .header-nav li {
 	font-size: max(14px, 16rem);
 	font-weight: 400;
@@ -1238,15 +1235,6 @@ body.is-loader {
 	.mob-nav-icon {
 		display: block;
 	}
-    .mob-phone-navbar {
-        display: block;
-        position: absolute;
-        right: var(--p1);
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--c1);
-        text-decoration: none;
-    }
 	.header-nav {
 		display: none;
 		position: fixed;

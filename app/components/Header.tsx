@@ -76,9 +76,6 @@ export default function Header() {
               {business.phonePrimary}
             </a>
           </div>
-          <a href={business.phonePrimaryLink} className="mob-phone-navbar">
-            {business.phonePrimary}
-          </a>
         </div>
       </div>
     </header>
