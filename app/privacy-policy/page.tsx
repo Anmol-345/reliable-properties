@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
               &ldquo;us&rdquo;, &ldquo;our&rdquo;) through the data processing
               services of _________________. If you want to contact us or if you
               have any questions, you can reach us by email using
-              rkumarr1982@gmail.com.
+              rkumarr1982@reliableproperty.in.
             </p>
             <h3>WHAT ARE THE LEGAL BASES FOR PROCESSING PERSONAL DATA?</h3>
             <p>
@@ -354,7 +354,7 @@ export default function PrivacyPolicy() {
             <p>
               If you have any questions about this policy or the information we
               hold about you please contact us by email using
-              rkumarr1982@gmail.com.
+              rkumarr1982@reliableproperty.in.
             </p>
             <h3>CHANGES</h3>
             <p>

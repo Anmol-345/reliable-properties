@@ -127,7 +127,7 @@ export default function TermsAndConditions() {
             <h3>14. Contact Information</h3>
             <p>
               If you have any questions or concerns regarding these Terms and
-              Conditions, please contact us at rkumarr1982@gmail.com or
+              Conditions, please contact us at rkumarr1982@reliableproperty.in or
               +91 9813199892 / +91 8168373817.
             </p>
           </div>

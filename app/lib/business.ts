@@ -5,7 +5,7 @@ export const business = {
   phonePrimaryLink: "tel:+919813199892",
   phoneSecondary: "+91 8168373817",
   phoneSecondaryLink: "tel:+918168373817",
-  email: "rkumarr1982@gmail.com",
+  email: "rkumarr1982@reliableproperty.in",
   services: ["Plots", "Flats", "Floors", "Commercial"],
   servicesLine: "Plots, Flats, Floors & Commercial",
   address:
