@@ -9,6 +9,6 @@ export const business = {
   services: ["Plots", "Flats", "Floors", "Commercial"],
   servicesLine: "Plots, Flats, Floors & Commercial",
   address:
-    "Shop no. 1,1441 B , Ansal Sector Road",
+    "Shop no. 1,1441 B , Ansal Sector Road, Sushant City, Kundli, Haryana - 131029",
   builders: ["Ansal API", "Maxheights", "Lakegrove", "TDI"],
 } as const;
