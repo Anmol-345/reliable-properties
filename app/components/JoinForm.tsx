@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { business } from "../lib/business";
 
 export default function JoinForm({
   withKey = true,
@@ -147,6 +148,16 @@ export default function JoinForm({
                 />
               </span>
             </span>
+          </div>
+          <div className="checkbox-group" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px', fontFamily: 'system-ui, -apple-system, sans-serif', fontSize: '14px', color: 'var(--c1)', textAlign: 'left' }}>
+            <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer' }}>
+              <input type="checkbox" name="notifications" style={{ marginTop: '3px', cursor: 'pointer' }} />
+              <span>I want to receive notifications on SMS, RCS & Email from {business.companyName}.</span>
+            </label>
+            <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer' }}>
+              <input type="checkbox" name="terms" required style={{ marginTop: '3px', cursor: 'pointer' }} />
+              <span>I agree to all the <Link href="/terms-and-conditions" style={{ textDecoration: 'underline', color: 'inherit' }}>Terms Of Services</Link> and <Link href="/privacy-policy" style={{ textDecoration: 'underline', color: 'inherit' }}>Privacy Policy</Link>.</span>
+            </label>
           </div>
           <div className="form-button">
             <button className="button" type="submit" disabled={loading}>
