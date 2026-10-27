@@ -80,7 +80,7 @@ export default function About() {
               </div>
             </div>
             <div className="about-team-col img-float">
-              <img src="/images/Randy-portreit.jpg" alt="" />
+              <img src="/images/owner.jpeg" alt="" />
             </div>
             <div className="about-team-col">
               <div className="about-team-text">
